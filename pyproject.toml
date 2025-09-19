@@ -1,0 +1,33 @@
+[project]
+name = "resume_chat_bot_agent"
+version = "0.1.0"
+description = "resume_chat_bot_agent using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "fastapi>=0.111.0,<1.0.0",
+    "uvicorn[standard]>=0.30.0,<1.0.0",
+    "pydantic>=2.7.0,<3.0.0",
+    "python-dotenv>=1.0.1,<2.0.0",
+    "openai>=1.40.0,<2.0.0",
+    "httpx>=0.27.0,<1.0.0",
+    "python-multipart>=0.0.9,<1.0.0",
+    "numpy>=1.26.0,<3.0.0",
+    "pinecone-client>=5.0.0,<6.0.0",
+    "pytesseract>=0.3.13,<1.0.0"
+    ,"pdfplumber>=0.11.0,<1.0.0"
+]
+
+[project.scripts]
+resume_chat_bot_agent = "resume_chat_bot_agent.main:run"
+run_crew = "resume_chat_bot_agent.main:run"
+train = "resume_chat_bot_agent.main:train"
+replay = "resume_chat_bot_agent.main:replay"
+test = "resume_chat_bot_agent.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
